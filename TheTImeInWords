@@ -1,0 +1,54 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hackerrank;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author daniChavez
+ */
+public class PossiblePath {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner myScan = new Scanner(System.in);
+        int testCases = myScan.nextInt();
+        long a = myScan.nextLong();
+        long b = myScan.nextLong();
+        long c = myScan.nextLong();
+        long d = myScan.nextLong();
+reached(a,b,c,d);
+    }
+
+    public static boolean reached(long a, long b, long x, long y) {
+        if (a == x && b == y) {
+            return true;
+        }
+        //i have 4 operations
+        //i have to put the four cases.
+        //case 1. a is smaller than x
+
+        long smallerDif = 0;
+
+        if (Math.abs(a - x) == Math.abs(b - x) || Math.abs(a - x) < Math.abs(b - y)) {
+            smallerDif = Math.abs(a - x);
+            System.out.println("smaller " + smallerDif+ " from "+a+" "+x);
+            
+        } else {
+            smallerDif = Math.abs(b - y);
+            System.out.println("smaller " + smallerDif+ " from "+b+" "+y);
+        }
+        
+        
+        
+        return false;
+    }
+
+}
